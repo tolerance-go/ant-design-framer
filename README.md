@@ -45,7 +45,7 @@ github: https://github.com/tolerance-go/ant-design-framer
 | DatePicker ||
 | Form ||
 | InputNumber ||
-| Input ||
+| Input | ✔️ |
 | Mentions ||
 | Rate ||
 | Radio ||
