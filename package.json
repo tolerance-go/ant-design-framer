@@ -1,0 +1,40 @@
+{
+	"main": "dist/index.js",
+	"license": "MIT",
+	"devDependencies": {
+		"@types/react": "^16.8",
+		"conventional-changelog-cli": "^2.0.23"
+	},
+	"peerDependencies": {
+		"framer": "^1.0",
+		"react": "^16.8"
+	},
+	"framer": {
+		"id": "c05fa29d-417b-4ea0-b382-e8c27d64acda",
+		"displayName": "Ant Design UI Kit"
+	},
+	"author": "bin yang",
+	"dependencies": {
+		"antd": "^3.23.3",
+		"lodash": "^4.17.15"
+	},
+	"name": "@framer/bzone.ant-design-ui-kit",
+	"version": "0.0.0",
+	"description": "a ui kit for antd&framer",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+ssh://git@github.com/tolerance-go/ant-design-framer.git"
+	},
+	"keywords": [
+		"antd",
+		"framer"
+	],
+	"bugs": {
+		"url": "https://github.com/tolerance-go/ant-design-framer/issues"
+	},
+	"homepage": "https://github.com/tolerance-go/ant-design-framer#readme"
+}
