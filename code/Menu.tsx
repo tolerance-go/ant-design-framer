@@ -31,15 +31,11 @@ const controlProperty: PropertyControls = {
     type: ControlType.Number,
     hidden: props => props.mode !== "inline"
   },
-  // 是否允许多选	boolean	false
-  multiple: { type: ControlType.Boolean },
   // 当前展开的 SubMenu 菜单项 key 数组	string[]
   openKeys: {
     type: ControlType.Array,
     propertyControl: { type: ControlType.String }
   },
-  // 是否允许选中	boolean	true
-  selectable: { type: ControlType.Boolean },
   // 当前选中的菜单项 key 数组	string[]
   selectedKeys: {
     type: ControlType.Array,
@@ -65,15 +61,12 @@ Menu.defaultProps = {
   height: 200,
   items: ["item1", "item2"],
   selectedKeys: ["item1"],
-  forceSubMenuRender: false,
   inlineIndent: 24,
   mode: "vertical",
-  multiple: false,
+  multiple: true,
   openKeys: [],
-  selectable: true,
-  subMenuCloseDelay: 1,
-  subMenuOpenDelay: 0,
-  theme: "light"
+  theme: "light",
+  inlineCollapsed: false,
 };
 
 addPropertyControls(Menu, controlProperty);
