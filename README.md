@@ -42,16 +42,16 @@ github: https://github.com/tolerance-go/ant-design-framer
 | AutoComplete ||
 | Checkbox ||
 | Cascader ||
-| DatePicker ||
+| DatePicker |✔️|
 | Form ||
-| InputNumber ||
+| InputNumber |✔️|
 | Input | ✔️ |
 | Mentions ||
 | Rate ||
 | Radio ||
-| Switch ||
+| Switch |✔️|
 | Slider ||
-| Select ||
+| Select |✔️|
 | TreeSelect ||
 | Transfer ||
 | TimePicker ||
