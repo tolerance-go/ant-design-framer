@@ -8,6 +8,11 @@ import {
 } from "framer";
 import { Input as AntInput } from "antd";
 import { keys, pick } from "lodash";
+import { Form as AntForm } from "antd";
+import {
+  FormItemControlProperty,
+  FormItemDefaults
+} from "../common/FormItem";
 
 const controlProperty: PropertyControls = {
   // 带标签的 input，设置后置标签	string|ReactNode
@@ -30,10 +35,6 @@ const controlProperty: PropertyControls = {
   disabled: {
     type: ControlType.Boolean
   },
-  // 输入框的 id	string
-  id: {
-    type: ControlType.String
-  },
   // 带有前缀图标的 input	string|ReactNode
   prefix: {
     type: ControlType.String
@@ -51,11 +52,27 @@ const controlProperty: PropertyControls = {
   // 可以点击清除图标删除内容	boolean		3.12
   allowClear: {
     type: ControlType.Boolean
-  }
+  },
+
+  ...FormItemControlProperty
 };
 
 export const Input = props => {
-  return <AntInput {...pick(props, keys(controlProperty))} />;
+  const { _labelCol, _wrapperCol, ...rest } = props;
+
+  if (!rest.label) {
+    return <AntInput {...pick(rest, keys(controlProperty))} />;
+  }
+
+  return (
+    <AntForm.Item
+      {...pick(rest, keys(FormItemControlProperty))}
+      labelCol={{ span: _labelCol }}
+      wrapperCol={{ span: _wrapperCol }}
+    >
+      <AntInput {...pick(rest, keys(controlProperty))} />
+    </AntForm.Item>
+  );
 };
 
 Input.defaultProps = {
@@ -64,7 +81,8 @@ Input.defaultProps = {
   // 是否禁用状态，默认为 false	boolean	false
   disabled: false,
   // 控件大小。注：标准表单内的输入框大小限制为 large。可选 large default small	string	defaul
-  size: "default"
+  size: "default",
+  ...FormItemDefaults
 };
 
 addPropertyControls(Input, controlProperty);
