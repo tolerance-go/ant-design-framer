@@ -46,7 +46,7 @@ export const Button = props => {
 };
 
 Button.defaultProps = {
-  width: 70,
+  width: 71,
   height: 32,
   label: "button",
   type: "primary",
