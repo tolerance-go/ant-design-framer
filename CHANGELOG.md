@@ -1,3 +1,18 @@
+# [1.4.0](https://github.com/tolerance-go/ant-design-framer/compare/v1.3.0...v1.4.0) (2019-09-20)
+
+
+### Bug Fixes
+
+* DatePicker.RangerPicker placeholder type error ([232521e](https://github.com/tolerance-go/ant-design-framer/commit/232521e))
+
+
+### Features
+
+* add Alert Component ([fbc7a1a](https://github.com/tolerance-go/ant-design-framer/commit/fbc7a1a))
+* add Modal Component ([bb4c1ef](https://github.com/tolerance-go/ant-design-framer/commit/bb4c1ef))
+
+
+
 # [1.3.0](https://github.com/tolerance-go/ant-design-framer/compare/v1.2.0...v1.3.0) (2019-09-19)
 
 
