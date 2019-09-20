@@ -84,9 +84,9 @@ github: https://github.com/tolerance-go/ant-design-framer
 
 | component | resolve |
 |-|-|
-| Alert ||
+| Alert |✔️|
 | Drawer ||
-| Modal ||
+| Modal |✔️|
 | Message ||
 | Notification ||
 | Progress ||
