@@ -23,7 +23,10 @@ const controlProperty: PropertyControls = {
   // 控制弹层是否展开	boolean	-
   open: { type: ControlType.Boolean },
   // 输入框提示文字	string|RangePicker[]	-
-  placeholder: { type: ControlType.String },
+  _placeholder: {
+    type: ControlType.Array,
+    propertyControl: { type: ControlType.String }
+  },
   // 开关大小，可选值：default small	string	default
   size: {
     type: ControlType.Enum,
@@ -47,13 +50,14 @@ const controlProperty: PropertyControls = {
 };
 
 export const RangePicker = props => {
-  const { _labelCol, _wrapperCol, _value, ...rest } = props;
+  const { _labelCol, _wrapperCol, _value, _placeholder, ...rest } = props;
 
   if (!rest.label) {
     return (
       <AntDatePicker.RangePicker
         {...pick(rest, keys(controlProperty))}
         value={getVal()}
+        placeholder={getPl()}
       />
     );
   }
@@ -66,7 +70,8 @@ export const RangePicker = props => {
     >
       <AntDatePicker.RangePicker
         {...pick(rest, keys(controlProperty))}
-        value={_value && moment(_value)}
+        value={getVal()}
+        placeholder={getPl()}
       />
     </AntForm.Item>
   );
@@ -76,6 +81,13 @@ export const RangePicker = props => {
       return [];
     }
     return _value.map(item => moment(item));
+  }
+
+  function getPl() {
+    if (isEmpty(_placeholder)) {
+      return [];
+    }
+    return _placeholder;
   }
 };
 
