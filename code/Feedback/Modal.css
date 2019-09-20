@@ -1,0 +1,22 @@
+.ant-modal-wrap {
+  position: relative;
+  overflow: inherit;
+}
+
+.ant-modal {
+  width: 100% !important;
+  top: initial;
+  width: initial;
+  margin: initial;
+  padding-bottom: initial;
+}
+
+.ant-modal-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.ant-modal-body {
+  flex-grow: 1;
+}
