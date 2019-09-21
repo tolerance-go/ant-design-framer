@@ -10,13 +10,3 @@
   margin: initial;
   padding-bottom: initial;
 }
-
-.ant-modal-content {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-.ant-modal-body {
-  flex-grow: 1;
-}

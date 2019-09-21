@@ -32,17 +32,20 @@ const controlProperty: PropertyControls = {
   // 对话框是否可见	boolean	无
   visible: {
     type: ControlType.Boolean
+  },
+  bodyHeight: {
+    type: ControlType.Number
   }
 };
 
 export const Modal = props => {
-  const { width, height, ...rest } = props;
+  const { width, bodyHeight, ...rest } = props;
   return (
     <AntModal
       {...pick(rest, keys(controlProperty))}
       mask={false}
       getContainer={false}
-      style={{ height }}
+      bodyStyle={{ height: bodyHeight }}
     />
   );
 };
@@ -50,6 +53,7 @@ export const Modal = props => {
 Modal.defaultProps = {
   width: 520,
   height: 450,
+  bodyHeight: 300,
   title: "title",
   // 垂直居中展示 Modal	Boolean	false	3.8.0
   centered: false,
