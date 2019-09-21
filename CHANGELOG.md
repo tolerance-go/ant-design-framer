@@ -1,3 +1,28 @@
+# [1.5.0](https://github.com/tolerance-go/ant-design-framer/compare/v1.4.0...v1.5.0) (2019-09-21)
+
+
+### Features
+
+* add Avatar Component ([6ce0a05](https://github.com/tolerance-go/ant-design-framer/commit/6ce0a05))
+* add Badge Component ([4efc013](https://github.com/tolerance-go/ant-design-framer/commit/4efc013))
+* add Card Component ([db5b656](https://github.com/tolerance-go/ant-design-framer/commit/db5b656))
+* add Descriptions Component ([37e58ca](https://github.com/tolerance-go/ant-design-framer/commit/37e58ca))
+* add List Component ([d1f3f5d](https://github.com/tolerance-go/ant-design-framer/commit/d1f3f5d))
+* add Modal property: bodyHeight, delete size following external container ([86daa33](https://github.com/tolerance-go/ant-design-framer/commit/86daa33))
+* Table add splitSymbol property ([fe691c9](https://github.com/tolerance-go/ant-design-framer/commit/fe691c9))
+
+
+### Performance Improvements
+
+* remove Table rowKey property ([99063be](https://github.com/tolerance-go/ant-design-framer/commit/99063be))
+
+
+### BREAKING CHANGES
+
+* Table changed default splitSymbol: ',' -> '|'
+
+
+
 # [1.4.0](https://github.com/tolerance-go/ant-design-framer/compare/v1.3.0...v1.4.0) (2019-09-20)
 
 
