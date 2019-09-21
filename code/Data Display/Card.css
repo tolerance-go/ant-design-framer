@@ -1,0 +1,7 @@
+.ant-card {
+  display: flex;
+  flex-direction: column;
+}
+.ant-card-body {
+  flex-grow: 1;
+}
