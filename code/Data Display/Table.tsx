@@ -14,10 +14,6 @@ const controlProperty: PropertyControls = {
   bordered: {
     type: ControlType.Boolean
   },
-  // 表格行 key 的取值，可以是字符串或一个函数	string|Function(record):string	'key'
-  rowKey: {
-    type: ControlType.String
-  },
   // 表格列的配置描述，具体项见下表	ColumnProps[]	-
   _columns: {
     type: ControlType.Array,
@@ -95,7 +91,7 @@ export const Table = props => {
         );
       })
       .map((item, index) => {
-        return { ...item, [rest.rowKey]: index };
+        return { ...item, key: index };
       });
   }
 };
