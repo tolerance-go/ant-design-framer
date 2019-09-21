@@ -21,6 +21,9 @@ const controlProperty: PropertyControls = {
       type: ControlType.String
     }
   },
+  splitSymbol: {
+    type: ControlType.String
+  },
   // 数据数组	any[]
   _dataSource: {
     type: ControlType.Array,
@@ -56,7 +59,7 @@ const controlProperty: PropertyControls = {
 };
 
 export const Table = props => {
-  const { _columns, _dataSource, scrollX, ...rest } = props;
+  const { _columns, _dataSource, scrollX, splitSymbol, ...rest } = props;
   return (
     <AntTable
       {...pick(rest, keys(controlProperty))}
@@ -82,7 +85,7 @@ export const Table = props => {
   function getDs() {
     return _dataSource
       .map((str = "") => {
-        const arr = str.split(",");
+        const arr = str.split(splitSymbol);
         return zipObject(
           [..._columns],
           range(_columns.length).map((item, index) => {
@@ -100,13 +103,13 @@ Table.defaultProps = {
   width: 300,
   height: 200,
   _columns: ["field1", "field2", "field3"],
-  _dataSource: ["data1,data2,data3"],
-  rowKey: "key",
+  _dataSource: ["data1|data2|data3"],
   bordered: false,
   indentSize: 15,
   loading: false,
   showHeader: true,
-  size: "default"
+  size: "default",
+  splitSymbol: "|"
 };
 
 addPropertyControls(Table, controlProperty);
