@@ -1,3 +1,34 @@
+# [1.6.0](https://github.com/tolerance-go/ant-design-framer/compare/v1.5.0...v1.6.0) (2019-09-22)
+
+
+### Features
+
+* add Divider component ([eb6cdea](https://github.com/tolerance-go/ant-design-framer/commit/eb6cdea))
+* add Notification component ([3858619](https://github.com/tolerance-go/ant-design-framer/commit/3858619))
+* add Pagination component ([f56dfa5](https://github.com/tolerance-go/ant-design-framer/commit/f56dfa5))
+* add Popconfirm component ([cdbbc06](https://github.com/tolerance-go/ant-design-framer/commit/cdbbc06))
+* add Progress component ([3ca2d4e](https://github.com/tolerance-go/ant-design-framer/commit/3ca2d4e))
+* add Skeleton component ([dd684b9](https://github.com/tolerance-go/ant-design-framer/commit/dd684b9))
+* add Step component ([d77eb9e](https://github.com/tolerance-go/ant-design-framer/commit/d77eb9e))
+* add Tabs component ([d0ad659](https://github.com/tolerance-go/ant-design-framer/commit/d0ad659))
+* add Tag component ([8b8f6cf](https://github.com/tolerance-go/ant-design-framer/commit/8b8f6cf))
+* add Timeline component ([a4940c9](https://github.com/tolerance-go/ant-design-framer/commit/a4940c9))
+* List add property itemHeight ([728b89f](https://github.com/tolerance-go/ant-design-framer/commit/728b89f))
+* Modal add mask props ([4e3e753](https://github.com/tolerance-go/ant-design-framer/commit/4e3e753))
+
+
+### Performance Improvements
+
+* Button emove unused props ([eeac6d4](https://github.com/tolerance-go/ant-design-framer/commit/eeac6d4))
+
+
+### BREAKING CHANGES
+
+* Button remove children, htmlType, href
+* List remove itemPadding property
+
+
+
 # [1.5.0](https://github.com/tolerance-go/ant-design-framer/compare/v1.4.0...v1.5.0) (2019-09-21)
 
 
