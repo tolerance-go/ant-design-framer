@@ -30,9 +30,9 @@ Welcome to submit pr for benefit of product, design and development.
 | Breadcrumb | ✔️ |
 | Dropdown ||
 | Menu | ✔️ |
-| Pagination ||
+| Pagination |✔️|
 | PageHeader ||
-| Steps ||
+| Steps |✔️|
 
 ## Data Entry
 
@@ -74,9 +74,9 @@ Welcome to submit pr for benefit of product, design and development.
 | Statistic ||
 | Tree ||
 | Tooltip ||
-| Timeline ||
-| Tag ||
-| Tabs ||
+| Timeline |✔️|
+| Tag |✔️|
+| Tabs |✔️|
 | Table | ✔️ |
 
 ## Feedback
@@ -84,15 +84,15 @@ Welcome to submit pr for benefit of product, design and development.
 | component | resolve |
 |-|-|
 | Alert |✔️|
-| Drawer ||
+| Drawer |✔️|
 | Modal |✔️|
 | Message ||
-| Notification ||
-| Progress ||
-| Popconfirm ||
+| Notification |✔️|
+| Progress |✔️|
+| Popconfirm |✔️|
 | Result ||
 | Spin ||
-| Skeleton ||
+| Skeleton |✔️|
 
 ## Other
 
@@ -101,6 +101,7 @@ Welcome to submit pr for benefit of product, design and development.
 | Anchor ||
 | BackTop ||
 | ConfigProvider ||
+| Divider |✔️|
 
 # Links
 
