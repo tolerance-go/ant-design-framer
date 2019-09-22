@@ -10,12 +10,8 @@ import { List as AntList } from "antd";
 import { keys, pick, zipObject, fill, range } from "lodash";
 
 const controlProperty: PropertyControls = {
-  itemPadding: {
-    type: ControlType.FusedNumber,
-    toggleKey: "itemPaddingMixed",
-    toggleTitles: ["All", "Individual"],
-    valueKeys: ["top", "right", "bottom", "left"],
-    valueLabels: ["T", "R", "B", "L"]
+  itemHeight: {
+    type: ControlType.Number
   },
   // 是否展示边框	boolean	false
   bordered: { type: ControlType.Boolean },
@@ -43,16 +39,7 @@ const controlProperty: PropertyControls = {
 };
 
 export const List = props => {
-  const {
-    items,
-    itemPadding,
-    itemPaddingMixed,
-    top,
-    left,
-    bottom,
-    right,
-    ...rest
-  } = props;
+  const { items, itemHeight, ...rest } = props;
 
   return (
     <AntList
@@ -61,9 +48,7 @@ export const List = props => {
         return (
           <AntList.Item
             style={{
-              padding: itemPaddingMixed
-                ? `${top}px ${right}px ${bottom}px ${left}px`
-                : `${itemPadding}px`
+              height: itemHeight
             }}
           >
             {item}
@@ -98,11 +83,7 @@ List.defaultProps = {
   size: "default",
   // 是否展示分割线	boolean	true
   split: true,
-  top: 12,
-  bottom: 12,
-  left: 24,
-  right: 24,
-  itemPaddingMixed: false
+  itemHeight: 46,
 };
 
 addPropertyControls(List, controlProperty);
