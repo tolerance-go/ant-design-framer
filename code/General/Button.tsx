@@ -29,11 +29,6 @@ const controlProperty: PropertyControls = {
   },
   disabled: { type: ControlType.Boolean },
   ghost: { type: ControlType.Boolean },
-  href: { type: ControlType.String },
-  htmlType: { type: ControlType.String },
-  children: {
-    type: ControlType.ComponentInstance
-  },
 };
 
 export const Button = props => {
