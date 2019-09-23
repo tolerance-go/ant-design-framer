@@ -28,20 +28,16 @@ const controlProperty: PropertyControls = {
     options: ["default", "circle", "round"]
   },
   disabled: { type: ControlType.Boolean },
-  ghost: { type: ControlType.Boolean },
+  ghost: { type: ControlType.Boolean }
 };
 
 export const Button = props => {
-  const { children, label, ...rest } = props;
-  return (
-    <AntBtn {...pick(rest, keys(controlProperty))}>
-      {isEmpty(children) ? label : children}
-    </AntBtn>
-  );
+  const { label, ...rest } = props;
+  return <AntBtn {...pick(rest, keys(controlProperty))}>{label}</AntBtn>;
 };
 
 Button.defaultProps = {
-  width: 71,
+  width: 70,
   height: 32,
   label: "button",
   type: "primary",
