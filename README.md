@@ -103,6 +103,12 @@ Welcome to submit pr for benefit of product, design and development.
 | ConfigProvider ||
 | Divider |✔️|
 
+## Collaboration
+
+| component | resolve |
+|-|-|
+| Mark |✔️|
+
 # Links
 
 - github: https://github.com/tolerance-go/ant-design-framer
