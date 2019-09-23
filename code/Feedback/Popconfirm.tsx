@@ -60,7 +60,7 @@ export const Popconfirm = props => {
     ...rest
   } = props;
   return (
-    <div className={`ant-popover ant-popover-placement-${placement}`}>
+    <div style={{position: 'relative'}} className={`ant-popover ant-popover-placement-${placement}`}>
       <div className="ant-popover-content">
         <div className="ant-popover-arrow"></div>
         <div className="ant-popover-inner" role="tooltip">
