@@ -16,6 +16,12 @@ const controlProperty: PropertyControls = {
       type: ControlType.String
     }
   },
+  subItems: {
+    type: ControlType.Array,
+    propertyControl: {
+      type: ControlType.String
+    }
+  },
   // 菜单类型，现在支持垂直、水平、和内嵌模式三种	string: vertical horizontal inline	vertical
   mode: {
     type: ControlType.Enum,
@@ -46,11 +52,22 @@ const controlProperty: PropertyControls = {
 };
 
 export const Menu = props => {
-  const { items, ...rest } = props;
+  const { items, subItems, ...rest } = props;
   return (
     <AntMenu {...pick(props, keys(controlProperty))}>
-      {items.map(item => {
-        return <AntMenu.Item key={item}>{item}</AntMenu.Item>;
+      {items.map((item = "") => {
+        const [name, subs = ""] = item.split(":");
+        const subMetas = subs.split("|").filter(item => !!item);
+        if (subMetas.length) {
+          return (
+            <AntMenu.SubMenu key={name} title={name}>
+              {subMetas.map(subName => {
+                return <AntMenu.Item key={subName}>{subName}</AntMenu.Item>;
+              })}
+            </AntMenu.SubMenu>
+          );
+        }
+        return <AntMenu.Item key={name}>{name}</AntMenu.Item>;
       })}
     </AntMenu>
   );
@@ -59,14 +76,14 @@ export const Menu = props => {
 Menu.defaultProps = {
   width: 160,
   height: 200,
-  items: ["item1", "item2"],
-  selectedKeys: ["item1"],
+  items: ["item1:subitem1|subitem2", "item2"],
   inlineIndent: 24,
-  mode: "vertical",
+  mode: "inline",
   multiple: true,
-  openKeys: [],
+  openKeys: ['item1'],
+  selectedKeys: ['subitem1'],
   theme: "light",
-  inlineCollapsed: false,
+  inlineCollapsed: false
 };
 
 addPropertyControls(Menu, controlProperty);
