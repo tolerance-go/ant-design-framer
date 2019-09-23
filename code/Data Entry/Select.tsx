@@ -83,8 +83,9 @@ export const Select = props => {
       <AntSelect
         style={{ width: "100%" }}
         {...pick(rest, keys(controlProperty))}
-        children={getOpt()}
-      />
+      >
+        {getOpt()}
+      </AntSelect>
     );
   }
 
@@ -97,8 +98,9 @@ export const Select = props => {
       <AntSelect
         style={{ width: "100%" }}
         {...pick(rest, keys(controlProperty))}
-        children={getOpt()}
-      />
+      >
+        {getOpt()}
+      </AntSelect>
     </AntForm.Item>
   );
 
