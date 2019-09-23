@@ -17,7 +17,7 @@ const controlProperty: PropertyControls = {
   // 取消按钮文字	string|ReactNode	取消
   cancelText: {
     type: ControlType.String,
-    hidden: props => props.type !== "default" || props.type !== "confirm"
+    hidden: props => props.type !== "default" && props.type !== "confirm"
   },
   okText: {
     type: ControlType.String
