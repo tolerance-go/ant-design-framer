@@ -7,9 +7,30 @@ import {
   PropertyControls
 } from "framer";
 import { Table as AntTable } from "antd";
-import { keys, pick, zipObject, fill, range } from "lodash";
+import {
+  keys,
+  pick,
+  zipObject,
+  fill,
+  range,
+  mapValues,
+  mapKeys,
+  difference
+} from "lodash";
+import {
+  controlProperty as paginationControlProperty,
+  defaultPaginationProps
+} from "../Navigation/Pagination";
 
-const controlProperty: PropertyControls = {
+const tableControlProperty: PropertyControls = {
+  // 分页器，参考配置项或 pagination 文档，设为 false 时不展示和进行分页	object
+  pagination: {
+    type: ControlType.Boolean
+  },
+  position: {
+    type: ControlType.Enum,
+    options: ["top", "bottom", "both"]
+  },
   // 是否展示外边框和列边框	boolean	false
   bordered: {
     type: ControlType.Boolean
@@ -39,10 +60,7 @@ const controlProperty: PropertyControls = {
   loading: {
     type: ControlType.Boolean
   },
-  // 分页器，参考配置项或 pagination 文档，设为 false 时不展示和进行分页	object
-  pagination: {
-    type: ControlType.Boolean
-  },
+
   // 设置横向或纵向滚动，也可用于指定滚动区域的宽和高，可以设置为像素值，百分比，true 和 'max-content'	{ x: number | true, y: number }	-
   scrollX: {
     type: ControlType.Number
@@ -58,17 +76,45 @@ const controlProperty: PropertyControls = {
   }
 };
 
+const controlProperty: PropertyControls = {
+  // 分页器，参考配置项或 pagination 文档，设为 false 时不展示和进行分页	object
+  pagination: tableControlProperty.pagination,
+  ...mapValues(paginationControlProperty, (val, key) => {
+    return {
+      ...val,
+      hidden: props => props.pagination === false
+    };
+  }),
+  ...tableControlProperty
+};
+
 export const Table = props => {
-  const { _columns, _dataSource, scrollX, splitSymbol, ...rest } = props;
+  const {
+    _columns,
+    _dataSource,
+    scrollX,
+    splitSymbol,
+    pagination,
+    position,
+    ...rest
+  } = props;
+  const tableProps = keys(tableControlProperty);
+  const pagProps = keys(paginationControlProperty);
+  const pagDiffProps = difference(pagProps, tableProps);
   return (
     <AntTable
-      {...pick(rest, keys(controlProperty))}
+      {...pick(rest, keys(tableControlProperty))}
       columns={getCols()}
       dataSource={getDs()}
       scroll={
         scrollX && {
           x: scrollX
         }
+      }
+      pagination={
+        pagination === true
+          ? { ...pick(rest, pagDiffProps), position }
+          : pagination
       }
     />
   );
@@ -109,7 +155,9 @@ Table.defaultProps = {
   loading: false,
   showHeader: true,
   size: "default",
-  splitSymbol: "|"
+  splitSymbol: "|",
+  position: "bottom",
+  ...defaultPaginationProps
 };
 
 addPropertyControls(Table, controlProperty);

@@ -9,7 +9,7 @@ import {
 import { Pagination as AntPagination } from "antd";
 import { keys, pick } from "lodash";
 
-const controlProperty: PropertyControls = {
+export const controlProperty: PropertyControls = {
   // 当前页数	number	-
   current: { type: ControlType.Number },
   // 禁用分页	boolean	-	3.18.0
@@ -44,21 +44,23 @@ const controlProperty: PropertyControls = {
 
 export const Pagination = props => {
   const { ...rest } = props;
-  return (
-    <AntPagination {...pick(rest, keys(controlProperty))}></AntPagination>
-  );
+  return <AntPagination {...pick(rest, keys(controlProperty))}></AntPagination>;
 };
 
-Pagination.defaultProps = {
-  width: 500,
-  height: 200,
+export const defaultPaginationProps = {
   pageSizeOptions: ["10", "20", "30", "40"],
   hideOnSinglePage: false,
   disabled: false,
   simple: false,
   total: 100,
   current: 1,
-  pageSize: 10,
+  pageSize: 10
+};
+
+Pagination.defaultProps = {
+  width: 500,
+  height: 200,
+  ...defaultPaginationProps
 };
 
 addPropertyControls(Pagination, controlProperty);
