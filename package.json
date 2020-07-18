@@ -16,7 +16,7 @@
 	"author": "bin yang",
 	"dependencies": {
 		"antd": "^3.23.3",
-		"lodash": "^4.17.15",
+		"lodash": "^4.17.19",
 		"moment": "^2.24.0"
 	},
 	"name": "@framer/bzone.ant-design-ui-kit",
